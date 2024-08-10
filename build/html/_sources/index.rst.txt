@@ -1,17 +1,11 @@
-.. Streamlit YOLO Hands On documentation master file, created by
-   sphinx-quickstart on Sat Aug 10 14:27:31 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+gihyo.jp記事のSphinxサンプル
+============================
+このドキュメントは、gihyo.jpのPython Monthly Topics(https://gihyo.jp/list/group/Python-Monthly-Topics)でのSphinx記事のサンプルドキュメントです。
 
-Streamlit YOLO Hands On documentation
-=====================================
+* 箇条書き
+* 箇条書き
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+.. code-block:: python
 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
+   for i in range(100):
+       print(i)

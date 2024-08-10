@@ -13,7 +13,7 @@ author = 'masakos'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ["myst_parser"]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -25,3 +25,4 @@ language = 'ja'
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+html_logo = "_static/sugi_logo.jpeg"
