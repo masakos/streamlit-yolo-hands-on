@@ -13,7 +13,11 @@ author = 'masakos'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser"]
+extensions = [
+    "myst_parser",
+    "sphinx_copybutton",
+    "sphinx_design",
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
