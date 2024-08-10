@@ -23,6 +23,12 @@ language = 'ja'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'furo'
 html_static_path = ['_static']
 html_logo = "_static/sugi_logo.jpeg"
+
+html_theme_options = {
+    "source_repository": "https://github.com/masakos/streamlit-yolo-hands-on/",
+    "source_branch": "main",
+    "source_directory": "source",
+}
