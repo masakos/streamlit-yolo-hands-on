@@ -18,7 +18,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
 ]
-
+myst_enable_extensions = ["colon_fence"]
 templates_path = ['_templates']
 exclude_patterns = []
 
@@ -35,4 +35,5 @@ html_theme_options = {
     "source_repository": "https://github.com/masakos/streamlit-yolo-hands-on/",
     "source_branch": "main",
     "source_directory": "source",
+    "sidebar_hide_name": True,
 }

@@ -11,8 +11,11 @@
 
 ## 目次
 
-- Streamlitとは
-- YOLOとは
-- StreamlitでYOLOを動かす
-- Streamlitの便利な(プラグイン)
+```{toctree}
+preparation
+streamlit
+yoro
+streamlit_yoro
+streamlit_extensions
+```
 
