@@ -1,5 +1,6 @@
-# StreamlitとYOLOを使用して物体検出する
+# StreamlitとYOLOでアプリ作成
 
+Streamlit と YOLOを掛け合わせてアプリを作成しましよう。
 
 ## 画像から物体を検出する
 
@@ -39,11 +40,12 @@ if __name__ == "__main__":
 
 ## 動画から物体を検出する
 
+
 ```python
 import cv2
 import streamlit as st
-from ultralytics import YOLO
 import tempfile
+from ultralytics import YOLO
 
 
 def app():
@@ -82,6 +84,8 @@ if __name__ == "__main__":
     app()
 ```
 
+- 参考：[https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html](https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html)
+
 :::{card} ヒント
 - RGB ＝ Pillowでの色の順はRGB（赤、緑、青）を前提としている。
 - BGR ＝ OpenCVの関数imread()で画像ファイルを読み込むとBGR（青、緑、赤）になる。
@@ -91,9 +95,9 @@ if __name__ == "__main__":
 :::{card} topic
 当初、最終的に物体検出後の動画を作成してStreamlitで表示しようと思いましが、以下の点であきらめました。
 - Web上で再生するにはH.264形式でコーデックする必要がある
-- 通常のpipでinstallする opencv-python では、H.264形式での動画出力に対応していないため、
-  - pip install --no-binary opencv-python でソースからビルドする必要がある 
-    - ビルドに時間かかる、またcloudでは `opencv-python-headless` しか対応していない
+- 通常のpipでinstallする opencv-python では、H.264形式での動画出力に対応していないため
+  - pip install --no-binary opencv-python でソースからビルドする必要がある
+    - またcloudでは `opencv-python-headless` しか対応していない
 
 Downloadボタンなどを配置して、作成したファイルをローカルで表示する分には問題なく再生されるので、お時間ある方は試してみてください。
 :::
@@ -104,6 +108,8 @@ Downloadボタンなどを配置して、作成したファイルをローカル
 
 - [demoURL](https://yolo-object-detection-abavrjes8taktln9dpuejj.streamlit.app/)
 - [github](https://github.com/masakos/yolo-object-detection-use-streamlit)
-  - [Create a multipage app](https://docs.streamlit.io/get-started/tutorials/create-a-multipage-app) を参考にpageを分割
+  - [Create a multipage app](https://docs.streamlit.io/get-started/tutorials/create-a-multipage-app) を参考に画像と動画のpagesを作成
 
-お時間ある方はLet's Try!!
+
+#### Let's Try🤗!!
+お時間ある方は　カスタマイズしたり、写真やビデオをとっていろいろな物体が検出できか試してみてください!!

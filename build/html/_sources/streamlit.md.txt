@@ -1,9 +1,9 @@
 # Streamlitとは
-[Streamlit](https://streamlit.io/)
+[https://streamlit.io/](https://streamlit.io/)
 - Pythonで作成されたオープンソースのWebフレームワークです
 - Webアプリに必要なフロントエンドの知識(HTML,CSS, JavaScript)を必要としません。
 - データの可視化やWebアプリケーションの作成に使用されます
-- 爆速でアプリを作って公開することができます
+- 素早くアプリを作って公開することができます
 
 
 ### インストール
@@ -20,35 +20,18 @@ $ streamlit hello
 ### Streamlitの基本的な使い方
 [API reference](https://docs.streamlit.io/develop/api-reference)
 
-- 実行
+- Streamlit の起動
 ```
-$ touch st_sample.py  # main.py という名前のファイルを作成
-$ streamlit run main.py
+$ streamlit run st_sample.py
 ```
 
-main.py に追加していきましょう!
+**st_sample.py というファイルを作成して、追加していきましょう!**
 ```python
 st.title('PyLadies Tokyo ハンズオン!')
 
 st.markdown('## こんにちは :wave:')
 st.markdown('### PyLadies Tokyoです')
 st.markdown('- *Streamlit* はドキュメントが **充実** しているので ***[ここ]()*** をみればだいたい使い方がわかります。')
-```
-
-- 以下でもmarkdownでかける
-    - (Magic commands) 明示的なコマンドを入力せずに、ほとんど何でも (マークダウン、データ、グラフ) 記述できる
-
-```
-'''
-# PyLadies Tokyo ハンズオン!
-## こんにちは :wave:
-### PyLadies Tokyoです
-- *Streamlit* はドキュメントが **充実** しているので ***[ここ]()*** をみればだいたい使い方がわかります。
-'''
-
-df = pd.DataFrame({'col1': [1,2,3]})
-df  # これでdfの中身がページに表示される
-
 ```
 
 - データの表示
@@ -95,11 +78,30 @@ st.area_chart(chart_data)
 st.bar_chart(chart_data)
 ```
 
+
+- Magic commands
+  - 明示的なコマンドを入力せずに、ほとんど何でも (マークダウン、データ、グラフ) 記述できる
+
+```
+'''
+# PyLadies Tokyo ハンズオン!
+## こんにちは :wave:
+### PyLadies Tokyoです
+- *Streamlit* はドキュメントが **充実** しているので ***[ここ]()*** をみればだいたい使い方がわかります。
+'''
+
+df = pd.DataFrame({'col1': [1,2,3]})
+df  # これでdfの中身がページに表示される
+
+```
+
 - image
 ```python
 st.image('sugi.jpeg', caption='スライムさん', use_column_width=True)
 ```
 
+
+**st_sample2.py というファイルを作成して、追加していきましょう!**
 - インタラクティブなユーザーインターフェイス
 ```python
 import streamlit as st
@@ -151,7 +153,6 @@ if uploaded_csv_file is not None:
 ```
 st.sidebar.text_input('名前を入力してください')
 ```
-- [Create a multipage app](https://docs.streamlit.io/get-started/tutorials/create-a-multipage-app)
 
 
 ## アプリの公開

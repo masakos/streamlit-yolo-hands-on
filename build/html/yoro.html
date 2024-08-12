@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="検索" href="search.html" /><link rel="next" title="StreamlitでYOLOを動かす" href="streamlit_yoro.html" /><link rel="prev" title="Streamlitとは" href="streamlit.html" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="検索" href="search.html" /><link rel="next" title="StreamlitとYOLOでアプリ作成" href="streamlit_yoro.html" /><link rel="prev" title="Streamlitとは" href="streamlit.html" />
 
     <!-- Generated with Sphinx 8.0.2 and Furo 2024.08.06 -->
         <title>YOLOとは - Streamlit YOLO Hands On ドキュメント</title>
@@ -206,8 +206,9 @@
 <li class="toctree-l1"><a class="reference internal" href="preparation.html">事前準備</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamlit.html">Streamlitとは</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">YOLOとは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="streamlit_yoro.html">StreamlitでYOLOを動かす</a></li>
-<li class="toctree-l1"><a class="reference internal" href="streamlit_extensions.html">Streamlitの便利な(プラグイン)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamlit_yoro.html">StreamlitとYOLOでアプリ作成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamlit_extensions.html">Streamlitの便利なプラグイン</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamlit_extensions.html#id1">参考資料</a></li>
 </ul>
 
 </div>
@@ -256,22 +257,21 @@
 <h1>YOLOとは<a class="headerlink" href="#yolo" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://docs.ultralytics.com/ja">https://docs.ultralytics.com/ja</a></p>
 <ul class="simple">
-<li><p>物体検出のための技術です</p>
+<li><p>「You Only Look Once」という英文の頭文字を取って作られ、「一度見るだけで良い」という意味で、人間のように一目見ただけで物体検出ができることを指しています</p>
 <ul>
-<li><p>YOLO8では物体検出の他に、セグメンテーション、イメージ分類、姿勢測定などを実行できます</p>
+<li><p>YOLOv8では物体検出の他に、セグメンテーション、イメージ分類、姿勢測定などを実行できます</p>
 <ul>
 <li><p>詳細は <a class="reference external" href="https://docs.ultralytics.com/tasks/">こちら</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>「You Only Look Once」という英文の頭文字を取って作られ、「一度見るだけで良い」という意味で、人間のように一目見ただけで物体検出ができることを指しています</p></li>
 <li><p>自動運転、セキュリティ、医療等さまざまな分野で使用されています</p></li>
 </ul>
 <section id="id1">
 <h2>インストール<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>物体検出の外部ライブラリをインストール</p></li>
+<li><p>インストール</p></li>
 </ul>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ultralytics
 </pre></div>
@@ -279,7 +279,7 @@
 <ul class="simple">
 <li><p>YOLOの学習済みモデルをダウンロード</p>
 <ul>
-<li><p>ファイル <code class="docutils literal notranslate"><span class="pre">yolo_sample.py</span></code> を作成し、以下追加して実行すると、<code class="docutils literal notranslate"><span class="pre">yolov8n.pt</span></code> というモデルがPython実行フォルダにダウンロードされます。</p></li>
+<li><p>以下のファイル <code class="docutils literal notranslate"><span class="pre">yolo_sample.py</span></code> を作成して実行すると、<code class="docutils literal notranslate"><span class="pre">yolov8n.pt</span></code> というモデルがPython実行フォルダにダウンロードされます。</p></li>
 </ul>
 </li>
 </ul>
@@ -292,9 +292,11 @@
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-ヒント</div>
-<p class="sd-card-text">YOLOの学習ずみモデルは複数あり、以下右にいくほどサイズは大きくなります。</p>
-<p class="sd-card-text">yolov8n.pt &lt; yolov8s.pt &lt; yolov8m.pt &lt; yolov8l.pt &lt; yolov8x.pt</p>
+topic</div>
+<p class="sd-card-text">YOLOの学習済みモデルは複数あり、以下右にいくほどサイズは大きくなります。</p>
+<ul class="simple">
+<li><p class="sd-card-text">yolov8n.pt &lt; yolov8s.pt &lt; yolov8m.pt &lt; yolov8l.pt &lt; yolov8x.pt</p></li>
+</ul>
 <p class="sd-card-text">今回はサイズの小さい  yolov8n.ptを使用します。
 モデルのサイズの小さいほど計算速度は早いですが、精度は低くなります。</p>
 <p class="sd-card-text">参考：<a class="reference external" href="https://docs.ultralytics.com/ja/models/yolov8/#performance-metrics">パフォーマンス指標</a></p>
@@ -352,7 +354,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">StreamlitでYOLOを動かす</div>
+                <div class="title">StreamlitとYOLOでアプリ作成</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

@@ -1,19 +1,20 @@
 # YOLOとは
 [https://docs.ultralytics.com/ja](https://docs.ultralytics.com/ja)
-- 物体検出のための技術です
-  - YOLO8では物体検出の他に、セグメンテーション、イメージ分類、姿勢測定などを実行できます
-    - 詳細は [こちら](https://docs.ultralytics.com/tasks/)
 - 「You Only Look Once」という英文の頭文字を取って作られ、「一度見るだけで良い」という意味で、人間のように一目見ただけで物体検出ができることを指しています
+  - YOLOv8では物体検出の他に、セグメンテーション、イメージ分類、姿勢測定などを実行できます
+    - 詳細は [こちら](https://docs.ultralytics.com/tasks/)
 - 自動運転、セキュリティ、医療等さまざまな分野で使用されています
 
 ### インストール
-- 物体検出の外部ライブラリをインストール
+- インストール
 ```sh
 $ pip install ultralytics
 ```
 
 - YOLOの学習済みモデルをダウンロード
-    - ファイル `yolo_sample.py` を作成し、以下追加して実行すると、`yolov8n.pt` というモデルがPython実行フォルダにダウンロードされます。
+    - 以下のファイル `yolo_sample.py` を作成して実行すると、`yolov8n.pt` というモデルがPython実行フォルダにダウンロードされます。
+
+
 
 ```python
 from ultralytics import YOLO
@@ -22,10 +23,10 @@ model = YOLO('yolov8n.pt')
 print(model.names)
 ```
 
-:::{card} ヒント
-YOLOの学習ずみモデルは複数あり、以下右にいくほどサイズは大きくなります。
+:::{card} topic
+YOLOの学習済みモデルは複数あり、以下右にいくほどサイズは大きくなります。
 
-yolov8n.pt < yolov8s.pt < yolov8m.pt < yolov8l.pt < yolov8x.pt
+- yolov8n.pt < yolov8s.pt < yolov8m.pt < yolov8l.pt < yolov8x.pt
 
 今回はサイズの小さい  yolov8n.ptを使用します。
 モデルのサイズの小さいほど計算速度は早いですが、精度は低くなります。
