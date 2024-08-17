@@ -9,7 +9,7 @@
   - 注意 YOLO自体の詳しい説明は行いません。StreamlitとYOLOを使ってアプリを構築することを目指します。
 
 
-![result](_static/pyladies_8.png)
+![result](_static/app_image.png)
 
 ## 目次
 
