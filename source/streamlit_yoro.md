@@ -4,7 +4,8 @@ Streamlit と YOLOを掛け合わせてアプリを作成しましよう。
 
 ## 画像から物体を検出する
 
-```python
+```{code-block} python
+:caption: st_app_image.py
 import cv2
 import streamlit as st
 from PIL import Image
@@ -17,7 +18,7 @@ def app():
     class_names_map = model.names
 
     with st.form("my_form"):
-        selected_classes = st.multiselect('検出したいクラスを選択してください', class_names_map.values(), default=['apple', 'person']) 
+        selected_classes = st.multiselect('検出したいクラスを選択してください', class_names_map.values(), default=['apple', 'person'])
         uploaded_image = st.file_uploader("画像を選択してください", type=["jpg", "jpeg", "png"])
         st.form_submit_button(label='Submit')
 
@@ -38,10 +39,16 @@ if __name__ == "__main__":
     app()
 ```
 
+```
+% streamlit run st_app_image.py
+```
+![検出されたオプジェクト](_static/detected_image.png)
+
 ## 動画から物体を検出する
 
 
-```python
+```{code-block} python
+:caption: st_app_movie.py
 import cv2
 import streamlit as st
 import tempfile
@@ -84,6 +91,10 @@ if __name__ == "__main__":
     app()
 ```
 
+```
+% streamlit run st_app_movie.py
+```
+
 - 参考：[https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html](https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html)
 
 :::{card} ヒント
@@ -93,7 +104,7 @@ if __name__ == "__main__":
 
 
 :::{card} topic
-当初、最終的に物体検出後の動画を作成してStreamlitで表示しようと思いましが、以下の点であきらめました。
+当初、最終的に物体検出後の動画を作成してStreamlitで表示しようと思いましが、以下の点で断念しました。
 - Web上で再生するにはH.264形式でコーデックする必要がある
 - 通常のpipでinstallする opencv-python では、H.264形式での動画出力に対応していないため
   - pip install --no-binary opencv-python でソースからビルドする必要がある

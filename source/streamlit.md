@@ -1,7 +1,7 @@
 # Streamlitとは
 [https://streamlit.io/](https://streamlit.io/)
 - Pythonで作成されたオープンソースのWebフレームワークです
-- Webアプリに必要なフロントエンドの知識(HTML,CSS, JavaScript)を必要としません。
+- Webアプリに必要なフロントエンドの知識(HTML,CSS, JavaScript)を必要としません
 - データの可視化やWebアプリケーションの作成に使用されます
 - 素早くアプリを作って公開することができます
 
@@ -26,7 +26,12 @@ $ streamlit run st_sample.py
 ```
 
 **st_sample.py というファイルを作成して、追加していきましょう!**
-```python
+```{code-block} python
+:caption: st_sample.py
+import streamlit as st
+import numpy as np
+import pandas as pd
+
 st.title('PyLadies Tokyo ハンズオン!')
 
 st.markdown('## こんにちは :wave:')
@@ -103,7 +108,8 @@ st.image('sugi.jpeg', caption='スライムさん', use_column_width=True)
 
 **st_sample2.py というファイルを作成して、追加していきましょう!**
 - インタラクティブなユーザーインターフェイス
-```python
+```{code-block} python
+:caption: st_sample2.py
 import streamlit as st
 import pandas as pd
 
@@ -114,7 +120,7 @@ st.write('名前:', name)
 # check box
 agree = st.checkbox('画像を表示しますか？')
 if agree:
-    st.image('image/sugi.jpeg', caption='杉田さん', use_column_width=False)
+    st.image('image/suraimu.jpeg', caption='スライムさん', use_column_width=False)
 
 
 # multi select
@@ -177,7 +183,7 @@ githubにStreamlitのアプリをpushしておくと、1分程度でアプリを
 `opencv-python-headless` を使用する必要があります。
 Cloudにデプロイする場合は、以下のように opencv-python-headlessに変更してください。
 
-$ pip uninstall opencv-python  
-$ pip install opencv-python-headless  
-$ pip freeze > requirements.txt  
+$ pip uninstall opencv-python
+$ pip install opencv-python-headless
+$ pip freeze > requirements.txt
 :::

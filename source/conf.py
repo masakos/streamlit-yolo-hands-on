@@ -29,7 +29,7 @@ language = 'ja'
 
 html_theme = 'furo'
 html_static_path = ['_static']
-html_logo = "_static/sugi_logo.jpeg"
+html_logo = "_static/pyladies-tokyo.png"
 
 html_theme_options = {
     "source_repository": "https://github.com/masakos/streamlit-yolo-hands-on/",

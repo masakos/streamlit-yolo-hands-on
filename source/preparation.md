@@ -9,25 +9,17 @@
 ```{code-block} bash
 :caption: Pythonのバージョンを確認
 
-$ python3 -V
-Python 3.10.8
+$ python -V
+Python 3.12.0
 ```
 
-
-```{hint}
-ひんとです
-```
-
-```{tip}
-TIPです
-```
 
 ### 仮装環境の作成
 
 - mac
 ```zsh
 $ python -m venv venv
-$ source .venv/bin/activate
+$ source venv/bin/activate
 ```
 
 - windows

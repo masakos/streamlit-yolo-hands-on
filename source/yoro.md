@@ -16,7 +16,8 @@ $ pip install ultralytics
 
 
 
-```python
+```{code-block} python
+:caption: yolo_sample.py
 from ultralytics import YOLO
 
 model = YOLO('yolov8n.pt')
@@ -38,8 +39,8 @@ YOLOの学習済みモデルは複数あり、以下右にいくほどサイズ�
 ### YOLOを使って画像ファイルの物体検出をしよう
 
 - 物体を検出して表示する
-```python
-# yolo_sample.py
+```{code-block} python
+:caption: yolo_sample.py
 
 from ultralytics import YOLO
 import cv2
@@ -61,7 +62,12 @@ cv2.destroyAllWindows()  # qで終了
 
 - クラスを指定して物体を検出する
 
-```python
+```{code-block} python
+:caption: yolo_sample2.py
+from ultralytics import YOLO
+import cv2
+
+
 model = YOLO('yolov8n.pt')
 img = cv2.imread('image/apple.jpg')
 results = model(img, classes=47)  #  47: 'apple' 「print(model.names)で出力した値を参照」
