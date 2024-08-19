@@ -183,7 +183,7 @@ githubにStreamlitのアプリをpushしておくと、1分程度でアプリを
 `opencv-python-headless` を使用する必要があります。
 Cloudにデプロイする場合は、以下のように opencv-python-headlessに変更してください。
 
-$ pip uninstall opencv-python
-$ pip install opencv-python-headless
+$ pip uninstall opencv-python<br>
+$ pip install opencv-python-headless<br>
 $ pip freeze > requirements.txt
 :::
